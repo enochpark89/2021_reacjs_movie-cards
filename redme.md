@@ -33,3 +33,9 @@
 URL1:https://unpkg.com/react@17.0.2/umd/react.production.min.js
 URL2:https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js
 - 
+
+# 2.3 Events in React
+
+- React.createElement("<name of an element>", <EventListeners>, <content of the button>): This will create an element. 
+- ReactDOM.render(<put multiple components>).
+- Benefit: with one statement, you can create the element, an eventListener, and set the value.
