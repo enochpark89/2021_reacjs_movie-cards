@@ -74,3 +74,42 @@ ReactDOM.render(<Container />, root);
 
 *Make sure to make the function that you are including or styled-Component into an uppercase*
 
+# 3.0 Understanding State
+
+- State can replace updating the data in JavaScript
+- NOT SO GOOD WAY:
+```js
+let counter = 0;
+
+// CountUP() Will rerender the webpage with render() function because HTML needs to change along with data.
+function CountUp() {
+    counter = counter+1;
+    render()
+}
+
+function render() {
+    ReactDOM.render(<Continer />, root);
+}
+
+// include variable in JSX
+const Containter = () => (
+    // If you change the counter, it will change the jsx and then html.
+    <div>
+        <h3>Total clicks: {counter} </h3>
+        <button onClick={CountUp}>Click me </button>
+    </div>
+)
+ReactDOM.render(<Continer />, root);
+```
+- This will not update the counter from the HTML because the state is only running once.
+- We are not running a state or we are not rerendering the webpage again.
+- If you rerender it it will work. 
+
+- when you check the elements with the Chrome Dev Tool, you will see the HTML getting updated everytime. 
+- React JS only changes the part that need to be changed.
+
+# 3.1.  setState - Part One
+
+- PROFESSIONAL WAY:
+```js
+```
