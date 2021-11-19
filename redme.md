@@ -113,3 +113,67 @@ ReactDOM.render(<Continer />, root);
 - PROFESSIONAL WAY:
 ```js
 ```
+
+# 3.2 
+
+- The rerender DOM is triggered with modifier() function. 
+    - This will update the page. 
+- If you do not do this, after you change the data, you would need to manually call ReactDOM root again to render the page. 
+- instead of modifier(), they figured out that SetState method would work better. 
+
+```js
+
+```
+# 3.3 Review
+
+- When you modify the state with the modifier funciton the component is rendered agian with the new value. 
+- Basically, this will re-render the component (UI) and data. 
+- When you modify the state with the modifier funciton, components re-render. 
+
+- We have replaced the vanilla JS completely. 
+
+# 3.4 State function
+
+- How does the state work if you are building out a form?
+- Now, we are using the current state to calculate the new state count. 
+- Sometimes, you want to change the state based on the previous state and the result is not what you desire. This bug will happen in the future. 
+- If you want to calculate current state based on the next state, you can set up in the different way. 
+```js
+setState(state+1)
+setState(state=> state+1)
+```
+# 3.5 Unit conversion applicaiton
+
+- We are going to start by creating JSX.
+- JSX is similar to HTML.
+
+HTML
+- <label> > connect with id and for
+```
+<label for=""><input id="">
+```
+JSX
+- Since there are some reserved words, JSX tends to avoid things that will cause confusion. 
+- Create a state
+
+```js
+// create a state
+// the second variable is a modifier.
+const [minutes, setMinute] = React.useState()
+
+// Since the onChange will call the modifier, if something is written in the inpute, it will change it. 
+return (
+    <div>
+    <h1 className="hi"> Super Converter </h1>
+    <label htmlFor="minutes">Minutes</label>
+    <input
+        value={minutes}
+        id="minutes"
+        placeholder="Minutes"
+        type="number"
+        onChange={onChange}
+    >
+    </div>
+)
+
+```
